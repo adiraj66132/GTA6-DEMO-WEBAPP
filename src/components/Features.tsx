@@ -1,7 +1,30 @@
-
 import { Gamepad, Map, Users, Car } from 'lucide-react';
+import { useEffect, useState, useRef } from 'react';
 
 const Features = () => {
+  const [isVisible, setIsVisible] = useState(false);
+  const featuresRef = useRef<HTMLDivElement>(null);
+  
+  useEffect(() => {
+    const observer = new IntersectionObserver(
+      ([entry]) => {
+        if (entry.isIntersecting) {
+          setIsVisible(true);
+          observer.disconnect();
+        }
+      },
+      { threshold: 0.1 }
+    );
+    
+    if (featuresRef.current) {
+      observer.observe(featuresRef.current);
+    }
+    
+    return () => {
+      observer.disconnect();
+    };
+  }, []);
+  
   const features = [
     {
       icon: <Map className="w-12 h-12 text-gta-neon" />,
@@ -38,9 +61,18 @@ const Features = () => {
           </p>
         </div>
         
-        <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
+        <div 
+          ref={featuresRef} 
+          className="grid md:grid-cols-2 lg:grid-cols-4 gap-8"
+        >
           {features.map((feature, index) => (
-            <div key={index} className="group neon-border hover:scale-105 transition-transform duration-300">
+            <div 
+              key={index} 
+              className={`group neon-border transition-all duration-500 will-change-transform ${
+                isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'
+              }`} 
+              style={{ transitionDelay: `${index * 150}ms` }}
+            >
               <div className="mb-4">{feature.icon}</div>
               <h3 className="text-2xl font-bold mb-3">{feature.title}</h3>
               <p className="text-gray-400">{feature.description}</p>
@@ -54,6 +86,8 @@ const Features = () => {
               src="/lovable-uploads/0f83a5d3-7256-4be3-8755-03f5327ab69e.png" 
               alt="Vice City" 
               className="w-full h-auto"
+              loading="lazy"
+              decoding="async"
             />
             <div className="absolute inset-0 bg-black/30 flex items-center justify-center">
               <h3 className="text-4xl md:text-6xl font-extrabold text-white text-center">
@@ -61,6 +95,7 @@ const Features = () => {
               </h3>
             </div>
           </div>
+          
           <div className="mt-8 grid md:grid-cols-2 gap-8">
             <div>
               <h3 className="text-2xl font-bold mb-4">A Living, Breathing World</h3>

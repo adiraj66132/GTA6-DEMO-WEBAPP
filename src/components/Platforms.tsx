@@ -2,12 +2,14 @@
 const Platforms = () => {
   return (
     <section id="platforms" className="gta-section bg-black relative overflow-hidden">
-      {/* Background clouds */}
+      {/* Background clouds with lazy loading */}
       <div className="absolute inset-0 z-0">
         <img 
           src="/lovable-uploads/a5e1f6c3-b2fc-48ed-831d-0834c6b7dddb.png" 
           alt="Background" 
           className="w-full h-full object-cover opacity-30"
+          loading="lazy"
+          decoding="async"
         />
       </div>
       
@@ -30,6 +32,9 @@ const Platforms = () => {
               src="/lovable-uploads/a1880ffb-41be-4a8a-9347-c21dbc68f292.png" 
               alt="PlayStation 5 and Xbox" 
               className="h-32 object-contain mb-6"
+              loading="lazy"
+              width="128"
+              height="128"
             />
             <h3 className="text-2xl font-bold mb-3">Console Experience</h3>
             <ul className="space-y-3 text-center">
@@ -59,7 +64,7 @@ const Platforms = () => {
             <div className="mt-6">
               <button className="px-6 py-3 font-bold uppercase tracking-widest 
                 border-2 border-gta-orange text-gta-orange
-                hover:bg-gta-orange/10 rounded-md transition-all">
+                hover:bg-gta-orange/10 rounded-md transition-transform hover:scale-105">
                 Coming Soon
               </button>
             </div>
@@ -73,6 +78,9 @@ const Platforms = () => {
                 src="/lovable-uploads/c6aec126-faa3-43ab-838a-0b3f78041912.png" 
                 alt="Mature 18+" 
                 className="h-16 object-contain"
+                loading="lazy"
+                width="64"
+                height="64"
               />
               <div className="ml-4 text-left">
                 <p className="text-sm text-gray-400">

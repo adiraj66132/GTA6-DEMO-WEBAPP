@@ -47,6 +47,15 @@
     @apply bg-gta-dark text-gta-light;
     font-feature-settings: "rlig" 1, "calt" 1;
   }
+
+  /* Optimize for animation performance */
+  .will-change-transform {
+    will-change: transform;
+  }
+
+  img {
+    content-visibility: auto;
+  }
 }
 
 @layer components {
@@ -59,9 +68,9 @@
   }
   
   .gta-button {
-    @apply px-6 py-3 font-bold uppercase tracking-widest transition-all 
+    @apply px-6 py-3 font-bold uppercase tracking-widest transition-transform 
     bg-gradient-to-r from-gta-neon to-gta-teal text-gta-dark
-    hover:shadow-[0_0_15px_rgba(0,255,204,0.8)] rounded-md;
+    hover:shadow-[0_0_15px_rgba(0,255,204,0.8)] rounded-md hover:scale-105;
   }
 
   .gta-section {

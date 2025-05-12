@@ -1,17 +1,35 @@
 
-import { useEffect } from 'react';
+import { useEffect, useRef } from 'react';
 
 const Hero = () => {
+  const parallaxElementsRef = useRef<NodeListOf<Element> | null>(null);
+  
   useEffect(() => {
-    // Add parallax effect for background
+    // Cache DOM elements for better performance
+    parallaxElementsRef.current = document.querySelectorAll('.parallax');
+    
+    // Use throttled event listener for mouse movement
+    let ticking = false;
+    
     const handleMouseMove = (e: MouseEvent) => {
-      const parallaxElements = document.querySelectorAll('.parallax');
+      if (!ticking) {
+        window.requestAnimationFrame(() => {
+          updateParallaxElements(e);
+          ticking = false;
+        });
+        ticking = true;
+      }
+    };
+    
+    const updateParallaxElements = (e: MouseEvent) => {
+      if (!parallaxElementsRef.current) return;
+      
       const mouseX = e.clientX;
       const mouseY = e.clientY;
       const windowWidth = window.innerWidth;
       const windowHeight = window.innerHeight;
       
-      parallaxElements.forEach((el) => {
+      parallaxElementsRef.current.forEach((el) => {
         const element = el as HTMLElement;
         const speedX = Number(element.dataset.speedX) || 0.05;
         const speedY = Number(element.dataset.speedY) || 0.05;
@@ -19,7 +37,8 @@ const Hero = () => {
         const moveX = (mouseX - windowWidth / 2) * speedX;
         const moveY = (mouseY - windowHeight / 2) * speedY;
         
-        element.style.transform = `translate(${moveX}px, ${moveY}px)`;
+        // Use transform with will-change for better performance
+        element.style.transform = `translate3d(${moveX}px, ${moveY}px, 0)`;
       });
     };
     
@@ -35,17 +54,17 @@ const Hero = () => {
       {/* Background gradient */}
       <div className="absolute inset-0 bg-gradient-to-b from-gta-dark to-gta-dark/90 z-0"></div>
       
-      {/* Background elements */}
+      {/* Background elements with will-change optimization */}
       <div className="absolute inset-0 z-0 overflow-hidden">
         <div 
           className="parallax absolute top-10 right-10 w-96 h-96 rounded-full 
-          bg-gradient-to-r from-gta-teal/20 to-gta-neon/20 blur-3xl"
+          bg-gradient-to-r from-gta-teal/20 to-gta-neon/20 blur-3xl will-change-transform"
           data-speed-x="0.02" 
           data-speed-y="0.03"
         ></div>
         <div 
           className="parallax absolute bottom-0 left-0 w-[40rem] h-[40rem] rounded-full 
-          bg-gradient-to-r from-gta-orange/20 to-gta-pink/20 blur-3xl"
+          bg-gradient-to-r from-gta-orange/20 to-gta-pink/20 blur-3xl will-change-transform"
           data-speed-x="0.03" 
           data-speed-y="0.02"
         ></div>
@@ -82,11 +101,14 @@ const Hero = () => {
           </div>
         </div>
         <div className="relative">
-          <div className="relative animate-float">
+          <div className="relative animate-float will-change-transform">
             <img 
               src="/lovable-uploads/fa6fc2a3-4722-45db-b3b5-8bbcba67dd18.png" 
               alt="GTA VI Character" 
               className="max-w-full h-auto"
+              loading="eager"
+              width="600"
+              height="800"
             />
           </div>
         </div>
