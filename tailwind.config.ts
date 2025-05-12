@@ -1,3 +1,4 @@
+
 import type { Config } from "tailwindcss";
 
 export default {
@@ -52,15 +53,15 @@ export default {
 					DEFAULT: 'hsl(var(--card))',
 					foreground: 'hsl(var(--card-foreground))'
 				},
-				sidebar: {
-					DEFAULT: 'hsl(var(--sidebar-background))',
-					foreground: 'hsl(var(--sidebar-foreground))',
-					primary: 'hsl(var(--sidebar-primary))',
-					'primary-foreground': 'hsl(var(--sidebar-primary-foreground))',
-					accent: 'hsl(var(--sidebar-accent))',
-					'accent-foreground': 'hsl(var(--sidebar-accent-foreground))',
-					border: 'hsl(var(--sidebar-border))',
-					ring: 'hsl(var(--sidebar-ring))'
+				// GTA VI theme colors
+				gta: {
+					neon: "#00ffcc",
+					teal: "#0fa3b1",
+					orange: "#ff7e5f",
+					pink: "#ff5e78",
+					purple: "#845EC2",
+					dark: "#121212",
+					light: "#f5f5f5"
 				}
 			},
 			borderRadius: {
@@ -84,11 +85,27 @@ export default {
 					to: {
 						height: '0'
 					}
+				},
+				'neon-pulse': {
+					'0%, 100%': { 
+						opacity: '1',
+						filter: 'brightness(1) drop-shadow(0 0 5px rgba(0, 255, 204, 0.8))'
+					},
+					'50%': { 
+						opacity: '0.8',
+						filter: 'brightness(1.2) drop-shadow(0 0 10px rgba(0, 255, 204, 0.5))'
+					},
+				},
+				'float': {
+					'0%, 100%': { transform: 'translateY(0)' },
+					'50%': { transform: 'translateY(-10px)' },
 				}
 			},
 			animation: {
 				'accordion-down': 'accordion-down 0.2s ease-out',
-				'accordion-up': 'accordion-up 0.2s ease-out'
+				'accordion-up': 'accordion-up 0.2s ease-out',
+				'neon-pulse': 'neon-pulse 3s infinite ease-in-out',
+				'float': 'float 6s infinite ease-in-out',
 			}
 		}
 	},
