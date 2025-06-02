@@ -1,7 +1,18 @@
 
+import { useToast } from '@/hooks/use-toast';
 import PreOrderDialog from './PreOrderDialog';
 
 const Platforms = () => {
+  const { toast } = useToast();
+
+  const handleComingSoon = () => {
+    toast({
+      variant: "destructive",
+      title: "Not Available Yet",
+      description: "PC version is still in development. Stay tuned for updates!",
+    });
+  };
+
   return (
     <section id="platforms" className="gta-section bg-black relative overflow-hidden">
       {/* Background clouds with lazy loading */}
@@ -66,9 +77,12 @@ const Platforms = () => {
               <li className="text-gray-300">Mod compatibility</li>
             </ul>
             <div className="mt-6">
-              <button className="px-6 py-3 font-bold uppercase tracking-widest 
-                border-2 border-gta-orange text-gta-orange
-                hover:bg-gta-orange/10 rounded-md transition-transform hover:scale-105">
+              <button 
+                onClick={handleComingSoon}
+                className="px-6 py-3 font-bold uppercase tracking-widest 
+                  border-2 border-gta-orange text-gta-orange
+                  hover:bg-gta-orange/10 rounded-md transition-transform hover:scale-105"
+              >
                 Coming Soon
               </button>
             </div>
