@@ -1,5 +1,6 @@
 
 import { useEffect, useRef } from 'react';
+import PreOrderDialog from './PreOrderDialog';
 
 const Hero = () => {
   const parallaxElementsRef = useRef<NodeListOf<Element> | null>(null);
@@ -82,9 +83,11 @@ const Hero = () => {
             Vice City await. Your criminal empire begins now.
           </p>
           <div className="flex flex-wrap gap-4">
-            <button className="gta-button animate-neon-pulse">
-              Pre-Order Now
-            </button>
+            <PreOrderDialog>
+              <button className="gta-button animate-neon-pulse">
+                Pre-Order Now
+              </button>
+            </PreOrderDialog>
             <button className="px-6 py-3 font-bold uppercase tracking-widest 
               border-2 border-gta-neon text-gta-neon
               hover:bg-gta-neon/10 rounded-md transition-all">

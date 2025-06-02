@@ -1,4 +1,6 @@
 
+import PreOrderDialog from './PreOrderDialog';
+
 const Platforms = () => {
   return (
     <section id="platforms" className="gta-section bg-black relative overflow-hidden">
@@ -44,7 +46,9 @@ const Platforms = () => {
               <li className="text-gray-300">Ultra-fast loading times</li>
             </ul>
             <div className="mt-6">
-              <button className="gta-button">Pre-Order Now</button>
+              <PreOrderDialog>
+                <button className="gta-button">Pre-Order Now</button>
+              </PreOrderDialog>
             </div>
           </div>
           

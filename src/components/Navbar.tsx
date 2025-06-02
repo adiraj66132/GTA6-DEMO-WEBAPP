@@ -1,6 +1,7 @@
 
 import { useState, useEffect } from 'react';
 import { Menu, X } from 'lucide-react';
+import PreOrderDialog from './PreOrderDialog';
 
 const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
@@ -51,7 +52,9 @@ const Navbar = () => {
             <a href="#world" className="text-white hover:text-gta-neon transition-colors hover:scale-105 inline-block">World</a>
             <a href="#characters" className="text-white hover:text-gta-neon transition-colors hover:scale-105 inline-block">Characters</a>
             <a href="#platforms" className="text-white hover:text-gta-neon transition-colors hover:scale-105 inline-block">Platforms</a>
-            <button className="gta-button will-change-transform">Pre-Order</button>
+            <PreOrderDialog>
+              <button className="gta-button will-change-transform">Pre-Order</button>
+            </PreOrderDialog>
           </div>
         </div>
         
@@ -62,7 +65,9 @@ const Navbar = () => {
             <a href="#world" className="text-white hover:text-gta-neon transition-colors w-full text-center py-2">World</a>
             <a href="#characters" className="text-white hover:text-gta-neon transition-colors w-full text-center py-2">Characters</a>
             <a href="#platforms" className="text-white hover:text-gta-neon transition-colors w-full text-center py-2">Platforms</a>
-            <button className="gta-button w-full">Pre-Order</button>
+            <PreOrderDialog>
+              <button className="gta-button w-full">Pre-Order</button>
+            </PreOrderDialog>
           </div>
         )}
       </div>
