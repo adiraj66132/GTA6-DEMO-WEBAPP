@@ -1,4 +1,3 @@
-
 import { useEffect, useRef } from 'react';
 import PreOrderDialog from './PreOrderDialog';
 
@@ -50,6 +49,10 @@ const Hero = () => {
     };
   }, []);
   
+  const handleWatchTrailer = () => {
+    window.open('https://www.youtube.com/watch?v=QdBZY2fkU-0', '_blank');
+  };
+  
   return (
     <div className="relative min-h-screen flex items-center overflow-hidden pt-16">
       {/* Background gradient */}
@@ -88,9 +91,12 @@ const Hero = () => {
                 Pre-Order Now
               </button>
             </PreOrderDialog>
-            <button className="px-6 py-3 font-bold uppercase tracking-widest 
-              border-2 border-gta-neon text-gta-neon
-              hover:bg-gta-neon/10 rounded-md transition-all">
+            <button 
+              onClick={handleWatchTrailer}
+              className="px-6 py-3 font-bold uppercase tracking-widest 
+                border-2 border-gta-neon text-gta-neon
+                hover:bg-gta-neon/10 rounded-md transition-all"
+            >
               Watch Trailer
             </button>
           </div>

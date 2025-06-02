@@ -48,6 +48,9 @@ const Footer = () => {
         <div className="mt-12 pt-6 border-t border-gta-neon/10 text-center text-xs text-gray-600">
           <p>This website is not affiliated with or endorsed by Rockstar Games, Take-Two Interactive, or any related entities.</p>
           <p className="mt-1">Created for demonstration purposes only. All images and references are the property of their respective owners.</p>
+          <p className="mt-4 text-green-500 font-semibold text-sm">
+            This page is a demo page, we don't carry any official reports from the official page.
+          </p>
         </div>
       </div>
     </footer>
