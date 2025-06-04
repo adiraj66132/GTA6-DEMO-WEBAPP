@@ -8,7 +8,7 @@ const Footer = () => {
         <div className="flex flex-col md:flex-row justify-between items-center">
           <div className="mb-6 md:mb-0">
             <div className="text-2xl font-extrabold gradient-text mb-2">GTA VI</div>
-            <p className="text-sm">© {currentYear} Rockstar Games. All trademarks belong to their respective owners.</p>
+            <p className="text-sm">© {currentYear} Adiraj Kashyap. All trademarks belong to their respective owners.</p>
             <p className="text-sm mt-1">This is a fan-made website for demonstration purposes only.</p>
           </div>
           
