@@ -1,58 +1,62 @@
-🚀 Project Info
+🚀 GTA 6 Demo WebApp
+🌐 Live URL
 
-URL: https://gta6demo.netlify.app/
+👉 gta6demo.netlify.app
+🛠️ Getting Started
 
-🛠️ How to Edit This Code
-
-You can work on this project using your preferred IDE. Follow these steps:
+Work on this project locally using your favorite IDE:
 
 # Step 1: Clone the repository
 git clone <YOUR_GIT_URL>
 
-# Step 2: Navigate to the project directory
+# Step 2: Navigate to the project folder
 cd <YOUR_PROJECT_NAME>
 
-# Step 3: Install dependencies
+# Step 3: Install project dependencies
 npm install
 
 # Step 4: Start the development server
 npm run dev
 
-📝 Edit Directly on GitHub
+📝 Quick Edits on GitHub
 
-    Navigate to the desired file.
+Want to make small changes online?
 
-    Click the ✏️ "Edit" button.
+    Open the file on GitHub.
 
-    Make your changes and commit.
+    Click the ✏️ Edit icon.
 
-💻 Use GitHub Codespaces (optional)
+    Make your changes and commit them.
 
-    Go to your repository's main page.
+💻 GitHub Codespaces (Optional)
+
+Use GitHub Codespaces for an instant cloud-based dev environment:
+
+    Navigate to your repo’s main page.
 
     Click the green "Code" button.
 
     Open the Codespaces tab.
 
-    Click "New codespace" to launch.
+    Click "New codespace" to launch and start coding instantly.
 
 🧰 Tech Stack
 
-This project uses:
+This project is built with modern and powerful tools:
 
-    Vite
+    ⚡ Vite – Next-gen frontend tooling
 
-    TypeScript
+    🧠 TypeScript – Strongly typed JavaScript
 
-    React
+    ⚛️ React – Component-based UI library
 
-    Tailwind CSS
+    🎨 Tailwind CSS – Utility-first CSS framework
 
-    shadcn/ui
+    🧱 shadcn/ui – Beautiful, accessible UI components
 
 🚀 Deployment
 
-You can deploy this project using any platform that supports static site hosting or full-stack deployments like:
+This app can be deployed to platforms that support static site hosting and serverless functions, such as:
 
     Vercel
 
@@ -62,4 +66,6 @@ You can deploy this project using any platform that supports static site hosting
 
     Render
 
+✨ Enjoy building the GTA 6 experience on the web!
 
+Feel free to contribute or customize it to your vision.
