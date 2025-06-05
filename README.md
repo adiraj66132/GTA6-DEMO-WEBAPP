@@ -1,7 +1,7 @@
 🚀 GTA 6 Demo WebApp
 🌐 Live URL
 
-👉 gta6demo.netlify.app
+gta6demo.netlify.app
 
 
 🛠️ Getting Started
